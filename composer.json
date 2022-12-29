@@ -1,0 +1,63 @@
+{
+  "name": "patchlevel/event-sourcing-psr-container",
+  "type": "library",
+  "license": "MIT",
+  "description": "event sourcing factories for PSR-11 containers",
+  "keywords": [
+    "event-sourcing",
+    "ddd",
+    "container",
+    "psr-11"
+  ],
+  "homepage": "https://github.com/patchlevel/event-sourcing-psr-container",
+  "authors": [
+    {
+      "name": "Daniel Badura",
+      "email": "daniel.badura@patchlevel.de"
+    },
+    {
+      "name": "David Badura",
+      "email": "david.badura@patchlevel.de"
+    }
+  ],
+  "require": {
+    "php": "~8.1.0 || ~8.2.0",
+    "patchlevel/event-sourcing": "^2.1.0",
+    "psr/container": "^1.0|^2.0"
+  },
+  "require-dev": {
+    "cspray/phinal": "^1.0",
+    "doctrine/migrations": "^3.3.2",
+    "infection/infection": "^0.26.13",
+    "laminas/laminas-servicemanager": "^3.20",
+    "patchlevel/coding-standard": "^1.2.0",
+    "patchlevel/event-sourcing-psalm-plugin": "^2.0.0",
+    "phpspec/prophecy-phpunit": "^2.0.1",
+    "phpstan/phpstan": "^1.8.2",
+    "phpunit/phpunit": "^9.5.23",
+    "psalm/plugin-phpunit": "^0.18.0",
+    "roave/infection-static-analysis-plugin": "^1.22.0",
+    "vimeo/psalm": "^4.26.0"
+  },
+  "config": {
+    "preferred-install": {
+      "*": "dist"
+    },
+    "sort-packages": true,
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "infection/extension-installer": true,
+      "composer/package-versions-deprecated": true
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Patchlevel\\EventSourcingPsrContainer\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Patchlevel\\EventSourcingPsrContainer\\Tests\\": "tests/"
+    }
+  }
+}
