@@ -18,7 +18,6 @@ composer require patchlevel/event-sourcing-psr-container
 ```php
 use Patchlevel\EventSourcing\Container\ConfigBuilder;
 use Patchlevel\EventSourcing\Container\DefaultContainer;
-use Psr\Container\ContainerInterface;
 
 $config = (new ConfigBuilder())
     ->singleTable()
@@ -45,6 +44,14 @@ $hotelRepository = $container->repository(Hotel::class);
 ### Laminas Service Manager
 
 ```php
+use Laminas\ServiceManager\ServiceManager;
+use Patchlevel\EventSourcing\Repository\RepositoryManager;
+use Patchlevel\EventSourcing\Schema\SchemaDirector;
+use Patchlevel\EventSourcingPsrContainer\ConfigBuilder;
+use Patchlevel\EventSourcingPsrContainer\Factory\ConnectionFactory;
+use Patchlevel\EventSourcingPsrContainer\Factory\RepositoryManagerFactory;
+use Patchlevel\EventSourcingPsrContainer\Factory\SchemaDirectorFactory;
+
 $config = (new ConfigBuilder())
     ->singleTable()
     ->databaseUrl('sqlite:///:memory:')
@@ -65,7 +72,7 @@ $serviceManager = new ServiceManager([
         'event_sourcing.connection' => new ConnectionFactory(),
         RepositoryManager::class => new RepositoryManagerFactory(),
         SchemaDirector::class => new SchemaDirectorFactory(),
-        ProfileProjection::class => static fn (ContainerInterface $container) => new ProfileProjection($container->get('event_sourcing.connection')),
+        ProfileProjection::class => static fn (ServiceManager $container) => new ProfileProjection($container->get('event_sourcing.connection')),
     ],
 ]);
 
