@@ -8,16 +8,28 @@ use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\DriverManager;
 use Psr\Container\ContainerInterface;
 
+/**
+ * @psalm-type Config = array{
+ *     url: string
+ * }
+ *
+ * @extends Factory<Config>
+ */
 final class ConnectionFactory extends Factory
 {
     public const SERVICE_NAME = 'event_sourcing.connection';
 
-    protected function createWithConfig(ContainerInterface $container): Connection
+    public function __invoke(ContainerInterface $container): Connection
     {
-        $config = $this->retrieveConfig($container, 'connection');
+        $config = $this->sectionConfig($container);
 
         return DriverManager::getConnection([
             'url' => $config['url'],
         ]);
+    }
+
+    protected function section(): string
+    {
+        return 'connection';
     }
 }

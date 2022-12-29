@@ -10,9 +10,12 @@ use Patchlevel\EventSourcing\Schema\SchemaDirector;
 use Patchlevel\EventSourcing\Store\Store;
 use Psr\Container\ContainerInterface;
 
+/**
+ * @extends Factory<array>
+ */
 final class SchemaDirectorFactory extends Factory
 {
-    protected function createWithConfig(ContainerInterface $container): SchemaDirector
+    public function __invoke(ContainerInterface $container): SchemaDirector
     {
         return new DoctrineSchemaDirector(
             $this->retrieveDependency(

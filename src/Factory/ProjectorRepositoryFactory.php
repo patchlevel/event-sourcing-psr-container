@@ -11,14 +11,26 @@ use Psr\Container\ContainerInterface;
 
 use function array_map;
 
+/**
+ * @psalm-type Config = array{
+ *     projectors: list<string>
+ * }
+ *
+ * @extends Factory<Config>
+ */
 final class ProjectorRepositoryFactory extends Factory
 {
-    protected function createWithConfig(ContainerInterface $container): ProjectorRepository
+    public function __invoke(ContainerInterface $container): ProjectorRepository
     {
-        $config = $this->retrieveConfig($container, 'projectors');
+        $config = $this->sectionConfig($container);
 
         return new InMemoryProjectorRepository(
-            array_map(static fn (string $id): Projector => $container->get($id), $config)
+            array_map(static fn (string $id): Projector => $container->get($id), $config['projectors'])
         );
+    }
+
+    protected function section(): string
+    {
+        return 'projection';
     }
 }

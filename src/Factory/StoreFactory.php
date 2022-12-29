@@ -11,11 +11,19 @@ use Patchlevel\EventSourcing\Store\SingleTableStore;
 use Patchlevel\EventSourcing\Store\Store;
 use Psr\Container\ContainerInterface;
 
+/**
+ * @psalm-type Config = array{
+ *     type: 'single'|'multi',
+ *     table_name: string
+ * }
+ *
+ * @extends Factory<Config>
+ */
 final class StoreFactory extends Factory
 {
-    protected function createWithConfig(ContainerInterface $container): Store
+    public function __invoke(ContainerInterface $container): Store
     {
-        $config = $this->retrieveConfig($container, 'store');
+        $config = $this->sectionConfig($container);
 
         if ($config['type'] === 'single') {
             return new SingleTableStore(
@@ -64,5 +72,10 @@ final class StoreFactory extends Factory
             'type' => 'multi',
             'table_name' => 'eventstore',
         ];
+    }
+
+    protected function section(): string
+    {
+        return 'store';
     }
 }

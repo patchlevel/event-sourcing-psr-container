@@ -4,18 +4,28 @@ declare(strict_types=1);
 
 namespace Patchlevel\EventSourcingPsrContainer;
 
+use Patchlevel\EventSourcingPsrContainer\Factory\AggregateRootRegistryFactory;
+use Patchlevel\EventSourcingPsrContainer\Factory\ConnectionFactory;
+use Patchlevel\EventSourcingPsrContainer\Factory\EventBusFactory;
+use Patchlevel\EventSourcingPsrContainer\Factory\EventSerializerFactory;
+use Patchlevel\EventSourcingPsrContainer\Factory\ProjectorRepositoryFactory;
+use Patchlevel\EventSourcingPsrContainer\Factory\StoreFactory;
+
 /**
+ * @psalm-import-type Config from AggregateRootRegistryFactory as AggregateConfig
+ * @psalm-import-type Config from ConnectionFactory as ConnectionConfig
+ * @psalm-import-type Config from EventBusFactory as EventBusConfig
+ * @psalm-import-type Config from EventSerializerFactory as EventConfig
+ * @psalm-import-type Config from ProjectorRepositoryFactory as ProjectionConfig
+ * @psalm-import-type Config from StoreFactory as StoreConfig
+ *
  * @psalm-type Config = array{
- *     event_bus: ?array{type: string, service: string},
- *     projection: array{projectionist: bool},
- *     watch_server: array{enabled: bool, host: string},
- *     connection: ?array{service: ?string, url: ?string},
- *     store: array{type: string, merge_orm_schema: bool},
- *     aggregates: list<string>,
- *     events: list<string>,
- *     snapshot_stores: array<string, array{type: string, service: string}>,
- *     migration: array{path: string, namespace: string},
- *     clock: array{freeze: ?string, service: ?string}
+ *     event_bus: EventBusConfig,
+ *     projection: ProjectionConfig,
+ *     connection: ConnectionConfig,
+ *     store: StoreConfig,
+ *     aggregate: AggregateConfig,
+ *     event: EventConfig
  * }
  */
 final class ConfigBuilder
@@ -137,7 +147,9 @@ final class ConfigBuilder
             'event_bus' => [
                 'listeners' => $this->processors,
             ],
-            'projectors' => $this->projectors,
+            'projection' => [
+                'projectors' => $this->projectors
+            ],
         ];
     }
 }

@@ -11,9 +11,12 @@ use Patchlevel\EventSourcing\Repository\RepositoryManager;
 use Patchlevel\EventSourcing\Store\Store;
 use Psr\Container\ContainerInterface;
 
+/**
+ * @extends Factory<array>
+ */
 final class RepositoryManagerFactory extends Factory
 {
-    protected function createWithConfig(ContainerInterface $container): RepositoryManager
+    public function __invoke(ContainerInterface $container): RepositoryManager
     {
         return new DefaultRepositoryManager(
             $this->retrieveDependency(

@@ -10,29 +10,41 @@ use RuntimeException;
 use function array_replace_recursive;
 use function is_array;
 
+/**
+ * @template C as array
+ */
 abstract class Factory
 {
     final public function __construct()
     {
     }
 
-    public function __invoke(ContainerInterface $container): mixed
+    abstract public function __invoke(ContainerInterface $container): mixed;
+
+    protected function section(): ?string
     {
-        return $this->createWithConfig($container);
+        return null;
     }
 
-    abstract protected function createWithConfig(ContainerInterface $container): mixed;
-
     /**
-     * @return array<string, mixed>
+     * @return C
      */
     protected function defaultConfig(): array
     {
         return [];
     }
 
-    protected function retrieveConfig(ContainerInterface $container, string $section): array
+    /**
+     * @return C
+     */
+    protected function sectionConfig(ContainerInterface $container): array
     {
+        $section = $this->section();
+
+        if ($section === null) {
+            return $this->defaultConfig();
+        }
+
         $applicationConfig = $container->has('config') ? $container->get('config') : [];
 
         if (!is_array($applicationConfig)) {

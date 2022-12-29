@@ -13,11 +13,18 @@ use Psr\Container\ContainerInterface;
 
 use function array_map;
 
+/**
+ * @psalm-type Config = array{
+ *     listeners: list<string>
+ * }
+ *
+ * @extends Factory<Config>
+ */
 final class EventBusFactory extends Factory
 {
-    protected function createWithConfig(ContainerInterface $container): EventBus
+    public function __invoke(ContainerInterface $container): EventBus
     {
-        $config = $this->retrieveConfig($container, 'event_bus');
+        $config = $this->sectionConfig($container);
 
         $listeners = array_map(static fn (string $id): Listener => $container->get($id), $config['listeners']);
 
@@ -32,10 +39,18 @@ final class EventBusFactory extends Factory
         return new DefaultEventBus($listeners);
     }
 
+    /**
+     * @return Config
+     */
     protected function defaultConfig(): array
     {
         return [
             'listeners' => [],
         ];
+    }
+
+    protected function section(): string
+    {
+        return 'event_bus';
     }
 }
