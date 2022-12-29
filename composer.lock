@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c83d3355c634ba1e8c188689a94f74db",
+    "content-hash": "45982d4e38598da10761f2f70f9701df",
     "packages": [
         {
             "name": "doctrine/cache",
@@ -2090,58 +2090,6 @@
             "time": "2022-02-25T21:32:43+00:00"
         },
         {
-            "name": "cspray/phinal",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cspray/phinal.git",
-                "reference": "16d2059ad9441ae926d6c6bf132013aa0ac2b4ea"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cspray/phinal/zipball/16d2059ad9441ae926d6c6bf132013aa0ac2b4ea",
-                "reference": "16d2059ad9441ae926d6c6bf132013aa0ac2b4ea",
-                "shasum": ""
-            },
-            "require": {
-                "ext-simplexml": "*",
-                "php": "^8.0",
-                "vimeo/psalm": "4.*"
-            },
-            "require-dev": {
-                "behat/behat": "^3.11",
-                "codeception/codeception": "^4.1",
-                "phpunit/phpunit": "^9.5.5",
-                "psalm/plugin-phpunit": "^0.16.0",
-                "squizlabs/php_codesniffer": "^3.3",
-                "weirdan/codeception-psalm-module": "^0.13.1",
-                "weirdan/prophecy-shim": "^2.0"
-            },
-            "type": "psalm-plugin",
-            "extra": {
-                "psalm": {
-                    "pluginClass": "Cspray\\Phinal\\Plugin"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Cspray\\Phinal\\": [
-                        "src"
-                    ]
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Enforce final on your classes!",
-            "support": {
-                "issues": "https://github.com/cspray/phinal/issues",
-                "source": "https://github.com/cspray/phinal/tree/1.0.0"
-            },
-            "time": "2022-07-08T19:14:32+00:00"
-        },
-        {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
             "version": "v0.7.2",
             "source": {
@@ -3613,62 +3561,6 @@
                 "source": "https://github.com/patchlevel/coding-standard/tree/1.2.0"
             },
             "time": "2022-06-26T09:09:23+00:00"
-        },
-        {
-            "name": "patchlevel/event-sourcing-psalm-plugin",
-            "version": "2.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/patchlevel/event-sourcing-psalm-plugin.git",
-                "reference": "e658dd83ee0536a3fe8d130270bcfa5b60a728b1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/patchlevel/event-sourcing-psalm-plugin/zipball/e658dd83ee0536a3fe8d130270bcfa5b60a728b1",
-                "reference": "e658dd83ee0536a3fe8d130270bcfa5b60a728b1",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^8.1",
-                "vimeo/psalm": "^4.23.0"
-            },
-            "require-dev": {
-                "patchlevel/coding-standard": "^1.1.1",
-                "patchlevel/event-sourcing": "^2.0.0",
-                "roave/security-advisories": "dev-master",
-                "symfony/var-dumper": "^6.1.0"
-            },
-            "type": "psalm-plugin",
-            "autoload": {
-                "psr-4": {
-                    "Patchlevel\\EventSourcingPsalmPlugin\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Daniel Badura",
-                    "email": "daniel.badura@patchlevel.de"
-                },
-                {
-                    "name": "David Badura",
-                    "email": "david.badura@patchlevel.de"
-                }
-            ],
-            "description": "psalm plugin for patchlevel/event-sourcing",
-            "homepage": "https://github.com/patchlevel/event-sourcing-psalm-plugin",
-            "keywords": [
-                "event-sourcing",
-                "psalm"
-            ],
-            "support": {
-                "issues": "https://github.com/patchlevel/event-sourcing-psalm-plugin/issues",
-                "source": "https://github.com/patchlevel/event-sourcing-psalm-plugin/tree/2.0.1"
-            },
-            "time": "2022-06-29T11:01:14+00:00"
         },
         {
             "name": "phar-io/manifest",

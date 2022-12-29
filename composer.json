@@ -26,12 +26,10 @@
     "psr/container": "^1.0|^2.0"
   },
   "require-dev": {
-    "cspray/phinal": "^1.0",
     "doctrine/migrations": "^3.3.2",
     "infection/infection": "^0.26.13",
     "laminas/laminas-servicemanager": "^3.20",
     "patchlevel/coding-standard": "^1.2.0",
-    "patchlevel/event-sourcing-psalm-plugin": "^2.0.0",
     "phpspec/prophecy-phpunit": "^2.0.1",
     "phpstan/phpstan": "^1.8.2",
     "phpunit/phpunit": "^9.5.23",
