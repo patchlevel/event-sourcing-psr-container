@@ -3,7 +3,7 @@
 
 # Event-Sourcing PSR-11 Container
 
-A lightweight but also all-inclusive event sourcing library with a focus on developer experience.
+[patchlevel/event-sourcing](https://github.com/patchlevel/event-sourcing) factories for PSR-11 containers.
 
 ## Installation
 
