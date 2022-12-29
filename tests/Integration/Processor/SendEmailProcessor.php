@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Patchlevel\EventSourcingPsrContainer\Tests\Integration\Default\Processor;
+namespace Patchlevel\EventSourcingPsrContainer\Tests\Integration\Processor;
 
 use Patchlevel\EventSourcing\EventBus\Listener;
 use Patchlevel\EventSourcing\EventBus\Message;
-use Patchlevel\EventSourcingPsrContainer\Tests\Integration\Default\Events\ProfileCreated;
-use Patchlevel\EventSourcingPsrContainer\Tests\Integration\Default\SendEmailMock;
+use Patchlevel\EventSourcingPsrContainer\Tests\Integration\Events\ProfileCreated;
+use Patchlevel\EventSourcingPsrContainer\Tests\Integration\SendEmailMock;
 
 final class SendEmailProcessor implements Listener
 {

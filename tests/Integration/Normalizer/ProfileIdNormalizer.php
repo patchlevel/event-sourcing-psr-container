@@ -2,12 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Patchlevel\EventSourcingPsrContainer\Tests\Integration\Default\Normalizer;
+namespace Patchlevel\EventSourcingPsrContainer\Tests\Integration\Normalizer;
 
 use InvalidArgumentException;
 use Patchlevel\EventSourcing\Serializer\Normalizer\Normalizer;
-use Patchlevel\EventSourcingPsrContainer\Tests\Integration\Default\ProfileId;
-
+use Patchlevel\EventSourcingPsrContainer\Tests\Integration\ProfileId;
 use function is_string;
 
 final class ProfileIdNormalizer implements Normalizer

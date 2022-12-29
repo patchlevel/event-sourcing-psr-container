@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Patchlevel\EventSourcingPsrContainer\Tests\Integration\Default;
+namespace Patchlevel\EventSourcingPsrContainer\Tests\Integration;
 
 use Patchlevel\EventSourcingPsrContainer\ConfigBuilder;
 use Patchlevel\EventSourcingPsrContainer\DefaultContainer;
-use Patchlevel\EventSourcingPsrContainer\Tests\Integration\Default\Aggregate\Profile;
-use Patchlevel\EventSourcingPsrContainer\Tests\Integration\Default\Processor\SendEmailProcessor;
-use Patchlevel\EventSourcingPsrContainer\Tests\Integration\Default\Projection\ProfileProjection;
+use Patchlevel\EventSourcingPsrContainer\Tests\Integration\Aggregate\Profile;
+use Patchlevel\EventSourcingPsrContainer\Tests\Integration\Processor\SendEmailProcessor;
+use Patchlevel\EventSourcingPsrContainer\Tests\Integration\Projection\ProfileProjection;
 use PHPUnit\Framework\TestCase;
 
 /**

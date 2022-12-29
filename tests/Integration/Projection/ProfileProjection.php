@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Patchlevel\EventSourcingPsrContainer\Tests\Integration\Default\Projection;
+namespace Patchlevel\EventSourcingPsrContainer\Tests\Integration\Projection;
 
 use Doctrine\DBAL\Connection;
 use Doctrine\DBAL\Schema\Table;
@@ -11,8 +11,7 @@ use Patchlevel\EventSourcing\Attribute\Drop;
 use Patchlevel\EventSourcing\Attribute\Handle;
 use Patchlevel\EventSourcing\EventBus\Message;
 use Patchlevel\EventSourcing\Projection\Projector\Projector;
-use Patchlevel\EventSourcingPsrContainer\Tests\Integration\Default\Events\ProfileCreated;
-
+use Patchlevel\EventSourcingPsrContainer\Tests\Integration\Events\ProfileCreated;
 use function assert;
 
 final class ProfileProjection implements Projector

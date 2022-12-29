@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Patchlevel\EventSourcingPsrContainer\Tests\Integration\Default\Events;
+namespace Patchlevel\EventSourcingPsrContainer\Tests\Integration\Events;
 
 use Patchlevel\EventSourcing\Attribute\Event;
 use Patchlevel\EventSourcing\Attribute\Normalize;
-use Patchlevel\EventSourcingPsrContainer\Tests\Integration\Default\Normalizer\ProfileIdNormalizer;
-use Patchlevel\EventSourcingPsrContainer\Tests\Integration\Default\ProfileId;
+use Patchlevel\EventSourcingPsrContainer\Tests\Integration\Normalizer\ProfileIdNormalizer;
+use Patchlevel\EventSourcingPsrContainer\Tests\Integration\ProfileId;
 
 #[Event('profile.created')]
 final class ProfileCreated

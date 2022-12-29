@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Patchlevel\EventSourcingPsrContainer\Tests\Integration\Default;
+namespace Patchlevel\EventSourcingPsrContainer\Tests\Integration;
 
 use Laminas\ServiceManager\ServiceManager;
 use Patchlevel\EventSourcing\Repository\RepositoryManager;
@@ -11,9 +11,9 @@ use Patchlevel\EventSourcingPsrContainer\ConfigBuilder;
 use Patchlevel\EventSourcingPsrContainer\Factory\ConnectionFactory;
 use Patchlevel\EventSourcingPsrContainer\Factory\RepositoryManagerFactory;
 use Patchlevel\EventSourcingPsrContainer\Factory\SchemaDirectorFactory;
-use Patchlevel\EventSourcingPsrContainer\Tests\Integration\Default\Aggregate\Profile;
-use Patchlevel\EventSourcingPsrContainer\Tests\Integration\Default\Processor\SendEmailProcessor;
-use Patchlevel\EventSourcingPsrContainer\Tests\Integration\Default\Projection\ProfileProjection;
+use Patchlevel\EventSourcingPsrContainer\Tests\Integration\Aggregate\Profile;
+use Patchlevel\EventSourcingPsrContainer\Tests\Integration\Processor\SendEmailProcessor;
+use Patchlevel\EventSourcingPsrContainer\Tests\Integration\Projection\ProfileProjection;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 

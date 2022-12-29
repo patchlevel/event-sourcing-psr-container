@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Patchlevel\EventSourcingPsrContainer\Tests\Integration\Default\MessageDecorator;
+namespace Patchlevel\EventSourcingPsrContainer\Tests\Integration\MessageDecorator;
 
 use Patchlevel\EventSourcing\EventBus\Decorator\MessageDecorator;
 use Patchlevel\EventSourcing\EventBus\Message;

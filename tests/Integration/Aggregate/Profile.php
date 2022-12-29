@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Patchlevel\EventSourcingPsrContainer\Tests\Integration\Default\Aggregate;
+namespace Patchlevel\EventSourcingPsrContainer\Tests\Integration\Aggregate;
 
 use Patchlevel\EventSourcing\Aggregate\AggregateRoot;
 use Patchlevel\EventSourcing\Attribute\Aggregate;
 use Patchlevel\EventSourcing\Attribute\Apply;
 use Patchlevel\EventSourcing\Attribute\Normalize;
 use Patchlevel\EventSourcing\Attribute\Snapshot;
-use Patchlevel\EventSourcingPsrContainer\Tests\Integration\Default\Events\ProfileCreated;
-use Patchlevel\EventSourcingPsrContainer\Tests\Integration\Default\Normalizer\ProfileIdNormalizer;
-use Patchlevel\EventSourcingPsrContainer\Tests\Integration\Default\ProfileId;
+use Patchlevel\EventSourcingPsrContainer\Tests\Integration\Events\ProfileCreated;
+use Patchlevel\EventSourcingPsrContainer\Tests\Integration\Normalizer\ProfileIdNormalizer;
+use Patchlevel\EventSourcingPsrContainer\Tests\Integration\ProfileId;
 
 #[Aggregate('profile')]
 #[Snapshot('default', 100)]

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Patchlevel\EventSourcingPsrContainer\Tests\Integration\Default;
+namespace Patchlevel\EventSourcingPsrContainer\Tests\Integration;
 
 final class SendEmailMock
 {
