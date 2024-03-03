@@ -32,7 +32,7 @@
     "patchlevel/coding-standard": "^1.2.0",
     "phpspec/prophecy-phpunit": "^2.0.1",
     "phpstan/phpstan": "^1.8.2",
-    "phpunit/phpunit": "^9.5.23",
+    "phpunit/phpunit": "^11.0.0",
     "psalm/plugin-phpunit": "^0.18.0",
     "roave/infection-static-analysis-plugin": "^1.22.0",
     "vimeo/psalm": "^5.0.0"
