@@ -28,7 +28,7 @@
   "require-dev": {
     "doctrine/migrations": "^3.3.2",
     "infection/infection": "^0.26.13",
-    "laminas/laminas-servicemanager": "^3.20",
+    "laminas/laminas-servicemanager": "^4.0",
     "patchlevel/coding-standard": "^1.2.0",
     "phpspec/prophecy-phpunit": "^2.0.1",
     "phpstan/phpstan": "^1.8.2",
